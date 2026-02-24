@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import heroImage from "@/assets/hero-illustration.png";
 
 const Hero = () => {
+  const navigate = useNavigate();
   return (
     <section className="relative pt-32 pb-20 overflow-hidden bg-hero" id="platform">
       <div className="container mx-auto px-6">
@@ -18,17 +20,17 @@ const Hero = () => {
             In a world drowning in resumes, SmartRecruit turns applications into clarity your team can act on — instantly.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="#how-it-works"
+            <button
+              onClick={() => navigate("/auth")}
               className="inline-flex items-center justify-center rounded-full bg-foreground text-primary-foreground px-8 py-3.5 text-sm font-semibold hover:bg-foreground/90 transition-colors"
             >
-              Learn more
-            </a>
+              Get Started Free
+            </button>
             <a
-              href="#cta"
+              href="#how-it-works"
               className="inline-flex items-center justify-center rounded-full border border-foreground text-foreground px-8 py-3.5 text-sm font-semibold hover:bg-foreground hover:text-primary-foreground transition-colors"
             >
-              Request a demo
+              Learn more
             </a>
           </div>
         </motion.div>
